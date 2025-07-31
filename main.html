@@ -1,19 +1,18 @@
+
 <!DOCTYPE html>
-
-<html lang="<!en">
-
+<html lang="en">
 <head>
-	 <title>Tic Tac Toe</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	 <div class="container">
+    <div class="container">
         <div id="player-names">
-            <input id="player-1" type="text" placeholder="Player 1 Name" >
+            <input id="player-1" type="text" placeholder="Player 1 Name">
             <input id="player-2" type="text" placeholder="Player 2 Name">
-            <button id="submit">Start game</button>
+            <button id="submit">Submit</button>
         </div>
         <div id="game-board" style="display: none;">
             <h1>Tic Tac Toe</h1>
@@ -31,76 +30,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="./script.js">
-		let player1Name, player2Name;
-let currentPlayer = 1;
-let gameBoard = ['', '', '', '', '', '', '', '', ''];
-let gameOver = false;
-
-document.getElementById('submit').addEventListener('click', () => {
-    player1Name = document.getElementById('player-1').value;
-    player2Name = document.getElementById('player-2').value;
-    document.getElementById('player-names').style.display = 'none';
-    document.getElementById('game-board').style.display = 'flex';
-    updateMessage();
-});
-
-function updateMessage() {
-    let message = document.querySelector('.message');
-    if (gameOver) {
-        return;
-    }
-    if (currentPlayer === 1) {
-        message.innerText = `${player1Name}, you're up!`;
-    } else {
-        message.innerText = `${player2Name}, you're up!`;
-    }
-}
-
-document.querySelectorAll('.cell').forEach(cell => {
-    cell.addEventListener('click', () => {
-        if (gameOver) {
-            return;
-        }
-        let cellId = parseInt(cell.id) - 1;
-        if (gameBoard[cellId] !== '') {
-            return;
-        }
-        if (currentPlayer === 1) {
-            cell.innerText = 'X';
-            gameBoard[cellId] = 'X';
-            currentPlayer = 2;
-        } else {
-            cell.innerText = 'O';
-            gameBoard[cellId] = 'O';
-            currentPlayer = 1;
-        }
-        checkWinner();
-        updateMessage();
-    });
-});
-
-function checkWinner() {
-    let winningCombinations = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
-    for (let combination of winningCombinations) {
-        if (gameBoard[combination[0]] === gameBoard[combination[1]] &&
-            gameBoard[combination[1]] === gameBoard[combination[2]] &&
-            gameBoard[combination[0]] !== '') {
-            let winner = gameBoard[combination[0]] === 'X' ? player1Name : player2Name;
-            document.querySelector('.
-
-</script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
 

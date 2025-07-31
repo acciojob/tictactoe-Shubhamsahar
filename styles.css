@@ -1,17 +1,6 @@
-/*  your css code here. If applicable */
 .container {
     text-align: center;
     margin-top: 50px;
-}
-
-#player-names {
-    margin-bottom: 20px;
-}
-
-#game-board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .board {
@@ -36,3 +25,4 @@
     font-size: 24px;
     margin-bottom: 20px;
 }
+
